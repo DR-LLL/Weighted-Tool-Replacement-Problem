@@ -1,0 +1,19 @@
+#pragma once
+
+#include "ISolver.h"
+#include "Instance.h" // Убедитесь, что подключили заголовочный файл с TestInstance
+#include "Mecler/Parameters.h"
+
+class GeneticSolver : public ISolver {
+public:
+    GeneticSolver(double maxTimeSeconds) {
+        name =  "Mecler";
+        timeLimit = maxTimeSeconds;
+    }
+
+
+
+
+    double ComputeSolution(const TestInstance& instance) override;
+    Parameters* createParametersFromInstance(const TestInstance& instance, unsigned int seed);
+};
